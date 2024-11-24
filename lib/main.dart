@@ -1,13 +1,25 @@
+import 'package:bookly_app/constants.dart';
 import 'package:flutter/material.dart';
+import 'package:get/route_manager.dart';
+
+import 'features/splash/presentation/views/splash_view.dart';
 
 void main() {
-  runApp(const SplashView());
+  runApp(const BooklyApp());
 }
-class SplashView extends StatelessWidget {
-  const SplashView({super.key});
+class BooklyApp extends StatelessWidget {
+  const BooklyApp({super.key});
+
+
 
   @override
   Widget build(BuildContext context) {
-    return const Placeholder();
+    return GetMaterialApp(
+      debugShowCheckedModeBanner: false,
+      theme: ThemeData().copyWith(
+        scaffoldBackgroundColor: kPrimaryColor,
+      ),
+      home: const SplashView(),
+    );
   }
 }
