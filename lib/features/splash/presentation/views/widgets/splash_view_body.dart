@@ -7,15 +7,15 @@ class SplashViewBody extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return const Column(
-   
       mainAxisAlignment: MainAxisAlignment.center,
-      //crossAxisAlignment: CrossAxisAlignment.center,
+      crossAxisAlignment: CrossAxisAlignment.stretch,
       children: [
-        Center(
-          child: Text(
-           kAppName,
-            style: TextStyle(
-                color: Colors.white, fontSize: 46, fontWeight: FontWeight.bold),
+        Text(
+          kAppName,
+          textAlign: TextAlign.center,
+          style: TextStyle(
+            fontSize: 46,
+            fontWeight: FontWeight.bold,
           ),
         )
       ],
