@@ -4,7 +4,7 @@ import 'custom_appBar.dart';
 import 'featured_list_view.dart';
 
 class HomeViewBody extends StatelessWidget {
-  const HomeViewBody({super.key});
+const HomeViewBody({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -25,3 +25,4 @@ class HomeViewBody extends StatelessWidget {
     );
   }
 }
+
