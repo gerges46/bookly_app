@@ -1,69 +1,24 @@
-import 'package:bookly_app/core/utils/style.dart';
-import 'package:bookly_app/features/home/data/presentation/views/widgets/book_rating.dart';
+// if you use list view inside column you must give it heigh or expanded it
 import 'package:flutter/material.dart';
-import '../../../../../../constants.dart';
 
-class BestSallerListViewItem extends StatelessWidget {
-  const BestSallerListViewItem({super.key});
+import 'best_saller_list_view_item.dart';
+
+class BestSallerLIstView extends StatelessWidget {
+  const BestSallerLIstView({super.key});
 
   @override
   Widget build(BuildContext context) {
-    return SizedBox(
-      height: 125,
-      child: Row(
-        children: [
-          AspectRatio(
-            aspectRatio: 2.5 / 4,
-            child: Container(
-              decoration: BoxDecoration(
-                borderRadius: BorderRadius.circular(8),
-                color: Colors.red,
-                image: const DecorationImage(
-                  fit: BoxFit.fill,
-                  image: AssetImage(
-                    kTestImage,
-                  ),
-                ),
-              ),
-            ),
-          ),
-          const SizedBox(
-            width: 30,
-          ),
-          Expanded(
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                SizedBox(
-                  width: MediaQuery.of(context).size.width * 0.5,
-                  child: const Text(
-                    "Harry potter and the Goblet of Fire ",
-                    maxLines: 2,
-                    style: Styles.textStyle20,
-                  ),
-                ),
-                const SizedBox(
-                  height: 3,
-                ),
-                const Text(
-                  "J.k. Rowling",
-                  style: Styles.textStyle14,
-                ),
-                const Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  children: [
-                    Text(
-                      "19.99\$",
-                      style: Styles.textStyle20,
-                    ),
-                    BookRating(),
-                  ],
-                ),
-              ],
-            ),
-          )
-        ],
-      ),
-    );
+    return ListView.builder(
+        //    shrinkWrap: true,// it mean it take height of here children if you use list view inside list view inside custom scroll view
+        physics:
+            const NeverScrollableScrollPhysics(), //use it because custom scroll view it scroll here dont need it and it build only appear on screen but shrink wrap it build it all in one time and it effect in performance
+        padding: EdgeInsets.zero,
+        itemCount: 10,
+        itemBuilder: (context, index) {
+          return const Padding(
+            padding: EdgeInsets.symmetric(vertical: 10),
+            child: BestSallerListViewItem(),
+          );
+        });
   }
 }
