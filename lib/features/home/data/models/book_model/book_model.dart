@@ -70,3 +70,5 @@ class BookModel extends Equatable {
     ];
   }
 }
+
+
