@@ -11,6 +11,7 @@ class HomeViewBody extends StatelessWidget {
   Widget build(BuildContext context) {
     // customScrollView use to make neasted scroll to make all screen scroll
     return const CustomScrollView(
+      physics:  BouncingScrollPhysics(),
       slivers: [
         SliverToBoxAdapter(
           child: Column(
@@ -24,7 +25,7 @@ class HomeViewBody extends StatelessWidget {
               Padding(
                 padding: EdgeInsets.symmetric(horizontal: 30),
                 child: Text(
-                  "best Saller",
+                  "Newest Books",
                   style: Styles.textStyle18,
                 ),
               ),
