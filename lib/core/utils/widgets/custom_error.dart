@@ -3,9 +3,15 @@ import 'package:flutter/widgets.dart';
 
 class CustomError extends StatelessWidget {
   const CustomError({super.key, required this.errorMessage});
-final String errorMessage;
+  final String errorMessage;
   @override
   Widget build(BuildContext context) {
-    return Center(child: Text(errorMessage,style: Styles.textStyle18,));
+    return Center(
+        child: Text(
+        
+      errorMessage,
+      
+      style: Styles.textStyle18,
+    ));
   }
 }
