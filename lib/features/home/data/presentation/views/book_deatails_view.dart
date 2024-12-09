@@ -20,8 +20,8 @@ BlocProvider.of<SimilarBooksCubit>(context).fetchSimilarBook(category:widget.boo
   }
   @override
   Widget build(BuildContext context) {
-    return const Scaffold(
-      body: SafeArea(child: BookDeatailsViewBody()),
+    return  Scaffold(
+      body: SafeArea(child: BookDeatailsViewBody(bookModel: widget.bookModel,)),
     );
   }
 }
